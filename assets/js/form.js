@@ -7,11 +7,11 @@ function handleFormSubmission(event) {
     event.preventDefault(); //
 
     // Grab form data
-    const title = document.querySelector('#title').value; 
-    const content = document.querySelector('#content').value; 
-
+    const title = document.querySelector('#title').value;
+    const content = document.querySelector('#content').value;
+    const userName = document.querySelector('#User-Name').value;
     // Check for missing data
-    if (!title || !content) {
+    if (!title || !content || !userName) {
         displayErrorMessage('Please fill out all fields.');
         return;
     }
@@ -20,18 +20,21 @@ function handleFormSubmission(event) {
     const blogPost = {
         title: title,
         content: content,
+        userName: userName,
         date: new Date().toLocaleString() // Adds a timestamp
     };
 
     // Store the new blog post in local storage
     storeLocalStorage('blogPosts', blogPost);
-
+    document.querySelector('#title').value =""
+   document.querySelector('#content').value =""
+  document.querySelector('#User-Name').value=""
     // Redirect to the blog page
-    redirectPage('blog.html'); 
+    redirectPage('blog.html');
 }
 
 function displayErrorMessage(message) {
-    const errorElement = document.querySelector('#error-message'); 
+    const errorElement = document.querySelector('#error-message');
     if (errorElement) {
         errorElement.textContent = message;
         errorElement.style.display = 'block'; // Make sure the error message is visible
