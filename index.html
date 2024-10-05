@@ -17,17 +17,17 @@
     <!-- TODO: Create landing page elements -->
 <header>
     <h1>My First Blog</h1>
-    <nav>
-        <button class="toggle-mode">Dark</button>
+    <!-- <nav> -->
+        <button id="toggle" class="toggle-mode">Dark</button>
         <button><a href="./blog.html">Exisitng Blogs</a></button>
-    </nav>
+    <!-- </nav> -->
 </header>
 <main>
     
     <form id="blogForm">
         
-        <label for="User-Name">User Name:</label>
-        <input type="text" id="User-Name" name="User Name">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title">
         
@@ -36,7 +36,7 @@
         
         <button type="submit">Submit</button>
         
-        <div id="error-message" style="display: none; color: red;"></div> <!-- Error message container -->
+        <div id="error" style="display: none; color: red;"></div> <!-- Error message container -->
     </form>
 </main>
 

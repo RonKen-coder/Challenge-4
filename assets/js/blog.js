@@ -5,7 +5,7 @@ const backButton = document.querySelector('.back-button');
 
 // TODO: Create a function that builds an element and appends it to the DOM
 function createAndAppendElement(tag, parentElement, textContent = '') {
-    console.log(tag)
+    // console.log(tag)
     const element = document.createElement(tag);
     element.textContent = textContent;
     parentElement.appendChild(element);
@@ -14,7 +14,11 @@ function createAndAppendElement(tag, parentElement, textContent = '') {
 
 // TODO: Create a function that handles the case where there are no blog posts to display
 function displayNoPostsMessage() {
-    createAndAppendElement('p', mainElement, 'No blog posts to display.');
+    // createAndAppendElement('p', mainElement, 'No blog posts to display.');
+    var pTag = document.createElement('p');
+    pTag.textContent = 'No blog posts to display.';
+    pTag.setAttribute('id', 'no-posts-message');
+    mainElement.appendChild(pTag);
 }
 // TODO: Create a function called `renderBlogList` that renders the list of blog posts if they exist. If not, call the no posts function.
 function renderBlogList(blogPosts) {
@@ -31,7 +35,7 @@ function renderBlogList(blogPosts) {
         });
     }
 }
-const blogPosts = readLocalStorage("blogPosts");
+const blogPosts = readLocalStorage("blogs");
 // TODO: Call the `renderBlogList` function
 renderBlogList(blogPosts);
 

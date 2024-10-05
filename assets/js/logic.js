@@ -6,16 +6,22 @@ const circleElement = document.querySelector('.circle'); // Circle element to to
 
 function applyMode(mode) {
   if (mode === 'dark') {
-    body.classList.add('dark-mode');
-    circleElement?.classList.add('dark-circle');  
+    body.classList.add('dark');
+    circleElement?.classList.add('dark'); 
+    body.classList.remove('light'); 
+    document.documentElement.style.backgroundColor = 'gray';
+    document.documentElement.style.setProperty('--circle-color', 'white');
   } else {
-    body.classList.remove('dark-mode');
-    circleElement?.classList.remove('dark-circle');
+    body.classList.remove('dark');
+    circleElement?.classList.remove('dark');
+    body.classList.add('light');  
+    document.documentElement.style.backgroundColor = 'white';  
+    document.documentElement.style.setProperty('--circle-color', 'black');
   }
 }
 
 function toggleMode() {
-  const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
+  const currentMode = body.classList.contains('dark') ? 'dark' : 'light';
   const newMode = currentMode === 'dark' ? 'light' : 'dark';
   
   // Apply new mode

@@ -64,12 +64,12 @@ ul {
     --secondary-color: #8570a5;
     /* Secondary accent color */
     --highlight: #f4e9c8;
-    /* Highlight
+    /* Highlight */
 }
-*{
+/* *{
 transition: background-color ease-in .5s;
 
-}
+} */
 
 header {
   display: flex;
@@ -97,6 +97,11 @@ main {
 /*
   Classes
 */
+.dark {
+    background-color: gray;
+    color: var(--light); 
+}
+
 .dark header,
 .dark footer {
     background-color: var(--dark);
